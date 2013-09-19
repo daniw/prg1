@@ -1,1 +1,5 @@
+# temporary editor files
 *.swp
+
+# compiled java bytecode files
+*.class
