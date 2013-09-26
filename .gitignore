@@ -3,3 +3,12 @@
 
 # compiled java bytecode files
 *.class
+
+# temporary tex files
+*.aux
+*.log
+*.out
+*.toc
+
+# tex output file
+aufgaben/prg1_main.pdf
