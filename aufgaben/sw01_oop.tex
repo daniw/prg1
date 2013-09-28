@@ -16,9 +16,110 @@
 
 \section{SW1}
 
+\subsection{Auftrag Selbststudium}
+
+\begin{enumerate}
+\subsubsection{Kapitel 1.2}
+\item Kreis und Quadrat generieren \\
+      Rechtsklick auf Klasse Circle $\rightarrow$ New Circle() $\rightarrow$ bestätigen\\
+      Rechtsklick auf Klasse Square $\rightarrow$ New Square() $\rightarrow$ bestätigen
+\item Beim Erstellen kann ein Name angegeben werden. 
+
+\subsubsection{Kapitel 1.3}
+\item Verschiebung um 40 bzw. 60 Pixel nach unten \\
+      \verb?makeInvisible()?: Es bleibt sichtbar
+\item 
+
+\subsubsection{Kapitel 1.4}
+\item \verb?moveHorizontal(-70)?
+\item Um Methoden Werte mitzugeben
+\item Der Datentyp muss der selbe sein, wie in der Methode definiert
+\item Ja, lesbarkeit wird besser
+
+\subsubsection{Kapitel 1.5}
+\item Bei unzulässiger Farbe wird die Farbe "'schwarz"' gesetzt\\
+      Fehlermeldung "'Error: cannot find symbol"'
+\item Ohne "'"' wird nach einer Variable mit dem Namen gesucht
+
+\subsubsection{Kapitel 1.6}
+\item $~$
+
+\subsubsection{Kapitel 1.7}
+\item $~$
+
+\subsubsection{Kapitel 1.8}
+\item Haus aus Quadrat und Dreieck, Sonne aus Kreis \\
+      move, change size, change color...
+\item In Feldern abgespeicherte Variabeln
+\item Zustand - aktueller Zustand des Objekts
+
+\subsubsection{Kapitel 1.9}
+\item $~$
+\item $~$
+
+\subsubsection{Kapitel 1.10}
+\item Eine Klasse beschreibt die Eigenschaften der konkreten Objekte
+\item Grünes Dreieck, rotes Quadrat, schwarzes Quadrat, gelber Kreis, move, 
+      change size, change color...
+
+\subsubsection{Kapitel 1.11}
+\item $~$
+\item \begin{lstlisting}[caption=Aufgabe 1.18]
+        ...
+        sun = new Circle();
+        sun.changeColor("yellow");
+        sun.moveHorizontal(100);
+        sun.moveVertical(-40);
+        sun.changeSize(80);
+        sun.makeVisible();
+        sun.slowMoveVertical(120);
+    }
+\end{lstlisting}
+\item 
+\begin{lstlisting}[caption=Aufgabe 1.19]
+/**
+* Sunset
+*/
+public void sunset()
+{
+    sun.slowMoveVertical();
+}
+\end{lstlisting}
+
+\subsubsection{Kapitel 1.12 und 1.13}
+\item $~$
+
+\subsubsection{Kapitel 1.14}
+\item $~$
+\item $~$
+\item Um Rückgabewerte von Methoden weiterzuverwenden
+\item void
+
+\subsubsection{1.15}
+\item 
+1.31: \\
+\begin{itemize}\item int \item string \item int \item int \item boolean \item string \item double\end{itemize}
+\begin{lstlisting}[caption=Aufgabe 1.32]
+private String name;
+\end{lstlisting}
+\begin{lstlisting}[caption=Aufgabe 1.33]
+public void send(String parameter)
+\end{lstlisting}
+\begin{lstlisting}[caption=Aufgabe 1.34]
+public int average(int a, int b)
+\end{lstlisting}
+
+\item $~$
+\end{enumerate}
+
+\subsection{Auftrag Lernteam}
 
 \begin{lstlisting}[caption=Test von lstlisting]
-public int test(int test)
-
-return(test)
+/**
+* Return the area of the circle
+*/
+public float getArea()
+{
+    return (float) (diameter * diameter * Math.PI / 4.0);
+}
 \end{lstlisting}
