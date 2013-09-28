@@ -4,6 +4,9 @@
 # compiled java bytecode files
 *.class
 
+# eclipse files
+workspace/.metadata
+
 # temporary tex files
 *.aux
 *.log
