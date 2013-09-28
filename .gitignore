@@ -6,6 +6,10 @@
 
 # eclipse files
 workspace/.metadata
+workspace/*/*.classpath
+workspace/*/*.project
+workspace/*/*.settings
+workspace/*/*bin
 
 # temporary tex files
 *.aux
