@@ -46,14 +46,14 @@ fields
 
 \subsubsection*{Exercise 11}
 \textit{How can you put comments into a Java-Code?}\\
-\verb?/* Block comment */
+\lstinline{/* Block comment */}
 // Line comment?
 
 \subsubsection*{Exercise 12 (important)}
 \textit{With which access-modification do you declare instance variables
 	usually? Is it \lstinline{private} or \lstinline{public}? Do you
 	have a reason for your answer?}\\
-\verb?private? because it is not reachable from outside the object. 
+\lstinline{private} because it is not reachable from outside the object. 
 
 \subsubsection*{Exercise 13}
 \textit{Explain the relation between a constructor and the state of an 
@@ -104,34 +104,34 @@ instance variables are accessible from inside the class.
 actual parameters are deleted after the method has finished. 
 
 \subsubsection*{Exercise 26}
-\textit{How would you translate the expressions "assignment" and 
-	"expression"?}\\
+\textit{How would you translate the expressions "'assignment"' and 
+	"'expression"'?}\\
 Zuweisung \\
 Ausdruck
 
 \subsubsection*{Exercise 27}
 \textit{How does an assignment-instruction work exactly? What's about to 
 	be aware of in relation to data types?}\\
-the value from the right side of the \verb?=? is copied to the left side of it. 
+the value from the right side of the \lstinline{=} is copied to the left side of it. 
 \\
 both need to be of the same data type. 
 
 \subsection{Exercises from book (chapter 2)}
 \subsubsection*{Exercise 2.1}
-\textit{Create a \verb?TicketMachine? object bench and take a look at its 
+\textit{Create a \lstinline{TicketMachine} object bench and take a look at its 
 methods. You should see the following: 
-\verb?get Balance, getPrice, insertMoney,? and \verb?ptintTicket?. Try out the 
-\verb?getPrice? method. You should see a return value containing the price of 
+\lstinline{get Balance, getPrice, insertMoney,} and \lstinline{printTicket}. Try out the 
+\lstinline{getPrice} method. You should see a return value containing the price of 
 the ticket thet was set when this object was created. Use the 
-\verb?insertMoney? method to simulate inserting an amount of money into the 
+\lstinline{insertMoney} method to simulate inserting an amount of money into the 
 machine. The machine stores as a balance the amount of money inserted. Use 
-\verb?getBalance? to check that the machine has kept an accurate record of the 
+\lstinline{getBalance} to check that the machine has kept an accurate record of the 
 amount just inserted. You can insert several seperate amounts of money into the 
 machine, just like you might insert multiple coins or bills into a real 
 machine. Try inserting the exact amount required for a ticket, and use 
-\verb?getBalance? to ensure that the balance is increased correctly. As this 
+\lstinline{getBalance} to ensure that the balance is increased correctly. As this 
 is a simple machine, a ticket will not be issued automatically, so once you 
-have inserted enough money, call the \verb?printTicket? method. A facsimile 
+have inserted enough money, call the \lstinline{printTicket} method. A facsimile 
 ticket should be printed in the BlueJ terminal window. }
 
 \subsubsection*{Exercise 2.2}
@@ -148,7 +148,7 @@ ticket? }
 \subsubsection*{Exercise 2.4}
 \textit{Try to obtain a good understanding of the ticket machine's behavior by 
 interacting with it on the object bench before we start looking, in the next 
-section, at how the \verb?TicketMachine? class is implemented. }
+section, at how the \lstinline{TicketMachine} class is implemented. }
 
 \subsubsection*{Exercise 2.5}
 \textit{Create another ticket machine for tickets of a different price; 
@@ -157,31 +157,31 @@ Buy a ticket from that machine. Does the printed ticket look any different
 from those printed by the first machine? }
 
 \subsubsection*{Exercise 2.6}
-\textit{Write out what you think the outer wrappers of the \verb?Student? and 
-\verb?LabClass? classes look like; do not worry about the inner part. }
+\textit{Write out what you think the outer wrappers of the \lstinline{Student} and 
+\lstinline{LabClass} classes look like; do not worry about the inner part. }
 
 \subsubsection*{Exercise 2.7}
-\textit{Does it matter whether we write \verb?public class TicketMachine? or 
-\verb?class public TicketMachine? in the outer wrapper of the class? Edit the 
-source of the \verb?TicketMachine? class to make the change, and then close 
+\textit{Does it matter whether we write \lstinline{public class TicketMachine} or 
+\lstinline{class public TicketMachine} in the outer wrapper of the class? Edit the 
+source of the \lstinline{TicketMachine} class to make the change, and then close 
 the editor window. Do you notice a change in the class diagram? }
 
 \subsubsection*{Exercise 2.8}
-\textit{Check whether or not it is possible to leave out the word \verb?public? 
-from the outer wrapper of the \verb?TicketMachine? class. }
+\textit{Check whether or not it is possible to leave out the word \lstinline{public} 
+from the outer wrapper of the \lstinline{TicketMachine} class. }
 
 \subsubsection*{Exercise 2.9}
-\textit{Put back the word \verb?public?, and then check whether it is possible 
-to leave out the word \verb?class? by trying to compile again. Make sure that 
+\textit{Put back the word \lstinline{public}, and then check whether it is possible 
+to leave out the word \lstinline{class} by trying to compile again. Make sure that 
 both words are put back as they were originally before continuing. }
 
 \subsubsection*{Exercise 2.10}
 \textit{From your earlier experimentation with the ticket machine objects 
 within BlueJ, you can probably remember the names of some of the methods-
-\verb?printTicket?, for instance. Look at the class definition in Code 2.1, 
+\lstinline{printTicket}, for instance. Look at the class definition in Code 2.1, 
 and use this knowledge, along with the additional information about ordering 
 we have given you, to make a list of the names of the fields, constructors and 
-methods in the \verb?TicketMachine? class. Hint: There is only one constructor 
+methods in the \lstinline{TicketMachine} class. Hint: There is only one constructor 
 in the class. }
 
 \subsubsection*{Exercise 2.11}
@@ -190,25 +190,25 @@ signifigantly different from the methods of the class? }
 
 \subsubsection*{Exercise 2.12}
 \textit{What do you think is the type of each of the following fields? \\
-\verb?private int count;?\\
-\verb?private Student representative;?\\
-\verb?private Game game;?}
+\lstinline{private int count;}\\
+\lstinline{private Student representative;}\\
+\lstinline{private Game game;}}
 
 \subsubsection*{Exercise 2.13}
 \textit{What are the names of the following fields? \\
-\verb?private boolean alive;?\\
-\verb?private Person tutor;?\\
-\verb?private Game game;?}
+\lstinline{private boolean alive;}\\
+\lstinline{private Person tutor;}\\
+\lstinline{private Game game;}}
 
 \subsubsection*{Exercise 2.14}
 \textit{From what you know about the naming conventions for classes, which of 
 the type names in Exercises 2.12 and 2.13 would you say are class names? }
 
 \subsubsection*{Exercise 2.15}
-\textit{In the following fiels declaration from the \verb?TicketMachine? class\\
-\verb?private int price;?\\
+\textit{In the following fiels declaration from the \lstinline{TicketMachine} class\\
+\lstinline{private int price;}\\
 does it matter which order the three words appear in? Edit the 
-\verb?TicketMachine? class to try different orderings. After each change, 
+\lstinline{TicketMachine} class to try different orderings. After each change, 
 close the editor. Does the appearance of the class diagram after each change 
 give you a clue as to whether or not other orderings are possible? Check by 
 pressing the Compile button to see if there is an error message. }
@@ -219,36 +219,36 @@ declaration? Once again, expreiment via the editor. The rule you will learn
 here is an important one, so be sure to remember it. }
 
 \subsubsection*{Exercise 2.17}
-\textit{Write in full the declaration for a field of type \verb?int? whose 
-name is \verb?status?. }
+\textit{Write in full the declaration for a field of type \lstinline{int} whose 
+name is \lstinline{status}. }
 
 \subsubsection*{Exercise 2.18}
 \textit{To what class does the following constructor belong? \\
-\verb?public Student(String name)?}
+\lstinline{public Student(String name)}}
 
 \subsubsection*{Exercise 2.19}
 \textit{How many parameters does the following constructor have, and what are 
 their types? \\
-\verb?public Book(String title, double, price)?}
+\lstinline{public Book(String title, double, price)}}
 
 \subsubsection*{Exercise 2.20}
-\textit{Can you guess what types some of the \verb?Book? class's fields might 
+\textit{Can you guess what types some of the \lstinline{Book} class's fields might 
 be, from the parameters in its constructor? Can you assume anything about the 
 names of the fields? }
 
 \subsubsection*{Exercise 2.21}
-\textit{Suppose that the class \verb?Pet? has a field called \verb?name? that 
-is of type \verb?String?. Write an assignment in the body of the following 
-constructor so that the \verb?name? field will be initialized with the value 
+\textit{Suppose that the class \lstinline{Pet} has a field called \lstinline{name} that 
+is of type \lstinline{String}. Write an assignment in the body of the following 
+constructor so that the \lstinline{name} field will be initialized with the value 
 of the constructor's parameter. \\
-\verb?public Pet(String petsName)
-{
-}?}
+\lstinline{public Pet(String petsName)}\\
+\lstinline!\{!\\
+\lstinline!\}!}
 
 \subsubsection*{Exercise 2.22}
 \textit{Challange exercise The following object creation will result in the 
-constructor of the \verb?Date? class being called. Can you write the 
+constructor of the \lstinline{Date} class being called. Can you write the 
 constructor's header? \\
-\verb?new Date("March", 23, 1861)?\\
+\lstinline{new Date("March", 23, 1861)}\\
 Try give meaningful names to the parameters. }
 
