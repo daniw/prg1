@@ -132,48 +132,97 @@ machine. Try inserting the exact amount required for a ticket, and use
 \lstinline{getBalance} to ensure that the balance is increased correctly. As this 
 is a simple machine, a ticket will not be issued automatically, so once you 
 have inserted enough money, call the \lstinline{printTicket} method. A facsimile 
-ticket should be printed in the BlueJ terminal window. }
+ticket should be printed in the BlueJ terminal window. }\\
+\begin{lstlisting}[caption=Solution for Exercise 2.1 in Eclipse]
+public class Main
+{
+	public static void main(String[] args)
+	{
+		TicketMachine tm1;
+		tm1 = new TicketMachine(300);
+		System.out.println("Price: " + tm1.getPrice());
+		tm1.insertMoney(200);
+		System.out.println("Balance: " + tm1.getBalance());
+		tm1.insertMoney(100);
+		System.out.println("Balance: " + tm1.getBalance());
+		tm1.printTicket();
+	}
+}
+\end{lstlisting}
 
 \subsubsection*{Exercise 2.2}
 \textit{What value is returned if you get the machine's balance after it has 
-printed a ticket? }
+printed a ticket? }\\
+0
 
 \subsubsection*{Exercise 2.3}
 \textit{Experiment with inserting different amounts of money before printing 
 tickets. Do you notice anything strange about the machine's behavior? what 
 happens if you insert too much money into the machine - do you receive any 
 refund? what happens if you do not insert enough and then try to print a 
-ticket? }
+ticket? }\\
+The ticket is printed in every case. The amount of inserted money does not 
+matter and the balance is always set to 0 after printing the ticket. 
 
 \subsubsection*{Exercise 2.4}
 \textit{Try to obtain a good understanding of the ticket machine's behavior by 
 interacting with it on the object bench before we start looking, in the next 
-section, at how the \lstinline{TicketMachine} class is implemented. }
+section, at how the \lstinline{TicketMachine} class is implemented. }\\
+nno answer
 
 \subsubsection*{Exercise 2.5}
 \textit{Create another ticket machine for tickets of a different price; 
 remember that you have to supply this value when you create the machine object. 
 Buy a ticket from that machine. Does the printed ticket look any different 
-from those printed by the first machine? }
+from those printed by the first machine? }\\
+\begin{lstlisting}[caption=Solution for Exercise 2.5 in Eclipse]
+public class Main
+{
+	public static void main(String[] args)
+	{
+		TicketMachine tm1;
+		tm1 = new TicketMachine(500);
+		tm1.insertMoney(500);
+		tm1.printTicket();
+	}
+}
+\end{lstlisting}
+The price printed on the ticket has changed to 500. 
 
 \subsubsection*{Exercise 2.6}
 \textit{Write out what you think the outer wrappers of the \lstinline{Student} and 
-\lstinline{LabClass} classes look like; do not worry about the inner part. }
+\lstinline{LabClass} classes look like; do not worry about the inner part. }\\
+\begin{lstlisting}[caption=Solution for Exercise 2.6 wrapper of Student class]
+public class Student
+{
+	...
+}
+\end{lstlisting}
+\begin{lstlisting}[caption=Solution for Exercise 2.6 wrapper of LabClass class]
+public class LabClass
+{
+	...
+}
+\end{lstlisting}
+
 
 \subsubsection*{Exercise 2.7}
 \textit{Does it matter whether we write \lstinline{public class TicketMachine} or 
 \lstinline{class public TicketMachine} in the outer wrapper of the class? Edit the 
 source of the \lstinline{TicketMachine} class to make the change, and then close 
-the editor window. Do you notice a change in the class diagram? }
+the editor window. Do you notice a change in the class diagram? }\\
+Not tested, but expected, that the order is important. 
 
 \subsubsection*{Exercise 2.8}
 \textit{Check whether or not it is possible to leave out the word \lstinline{public} 
-from the outer wrapper of the \lstinline{TicketMachine} class. }
+from the outer wrapper of the \lstinline{TicketMachine} class. }\\
+Not tested but expected, that \lstinline{public} is necessary. 
 
 \subsubsection*{Exercise 2.9}
 \textit{Put back the word \lstinline{public}, and then check whether it is possible 
 to leave out the word \lstinline{class} by trying to compile again. Make sure that 
-both words are put back as they were originally before continuing. }
+both words are put back as they were originally before continuing. }\\
+Not tested but expected, that \lstinline{class} is necessary. 
 
 \subsubsection*{Exercise 2.10}
 \textit{From your earlier experimentation with the ticket machine objects 
@@ -182,27 +231,35 @@ within BlueJ, you can probably remember the names of some of the methods-
 and use this knowledge, along with the additional information about ordering 
 we have given you, to make a list of the names of the fields, constructors and 
 methods in the \lstinline{TicketMachine} class. Hint: There is only one constructor 
-in the class. }
+in the class. }\\
+fields: price, balance, total\\
+constructor: TicketMachine(int cost)\\
+methods: getPrice(), getBalance(), insertMoney(int amount), printTicket()
 
 \subsubsection*{Exercise 2.11}
 \textit{What are the two features of the constructor that make it look 
-signifigantly different from the methods of the class? }
+signifigantly different from the methods of the class? }\\
+A constructor has no return type and has the same name as the class. 
 
 \subsubsection*{Exercise 2.12}
 \textit{What do you think is the type of each of the following fields? \\
 \lstinline{private int count;}\\
 \lstinline{private Student representative;}\\
-\lstinline{private Game game;}}
+\lstinline{private Game game;}}\\
+int, Student, Game
 
 \subsubsection*{Exercise 2.13}
 \textit{What are the names of the following fields? \\
 \lstinline{private boolean alive;}\\
 \lstinline{private Person tutor;}\\
-\lstinline{private Game game;}}
+\lstinline{private Game game;}}\\
+alive, tutor, game
 
 \subsubsection*{Exercise 2.14}
 \textit{From what you know about the naming conventions for classes, which of 
 the type names in Exercises 2.12 and 2.13 would you say are class names? }
+Classes start with a Capital letter. \\
+$\rightarrow$ Student, Game, Person and Game
 
 \subsubsection*{Exercise 2.15}
 \textit{In the following fiels declaration from the \lstinline{TicketMachine} class\\
@@ -211,30 +268,41 @@ does it matter which order the three words appear in? Edit the
 \lstinline{TicketMachine} class to try different orderings. After each change, 
 close the editor. Does the appearance of the class diagram after each change 
 give you a clue as to whether or not other orderings are possible? Check by 
-pressing the Compile button to see if there is an error message. }
+pressing the Compile button to see if there is an error message. }\\
+Not tested, but expected, that the order is important. 
 
 \subsubsection*{Exercise 2.16}
 \textit{Is it always necessary to have a semicolon at the end of a field 
 declaration? Once again, expreiment via the editor. The rule you will learn 
-here is an important one, so be sure to remember it. }
+here is an important one, so be sure to remember it. }\\
+Not tested but expexted, that the semicolon is needed. 
 
 \subsubsection*{Exercise 2.17}
 \textit{Write in full the declaration for a field of type \lstinline{int} whose 
-name is \lstinline{status}. }
+name is \lstinline{status}. }\\
+\begin{lstlisting}[caption=Solution for Exercise 2.17]
+private int status;
+\end{lstlisting}
 
 \subsubsection*{Exercise 2.18}
 \textit{To what class does the following constructor belong? \\
-\lstinline{public Student(String name)}}
+\lstinline{public Student(String name)}}\\
+Student
 
 \subsubsection*{Exercise 2.19}
 \textit{How many parameters does the following constructor have, and what are 
 their types? \\
-\lstinline{public Book(String title, double, price)}}
+\lstinline{public Book(String title, double, price)}}\\
+Two parameters with the types String and double. 
 
 \subsubsection*{Exercise 2.20}
 \textit{Can you guess what types some of the \lstinline{Book} class's fields might 
 be, from the parameters in its constructor? Can you assume anything about the 
-names of the fields? }
+names of the fields? }\\
+\begin{lstlisting}[caption=Solution for Exercise 2.20]
+private String title;
+private double price;
+\end{lstlisting}
 
 \subsubsection*{Exercise 2.21}
 \textit{Suppose that the class \lstinline{Pet} has a field called \lstinline{name} that 
@@ -243,12 +311,20 @@ constructor so that the \lstinline{name} field will be initialized with the valu
 of the constructor's parameter. \\
 \lstinline{public Pet(String petsName)}\\
 \lstinline!\{!\\
-\lstinline!\}!}
+\lstinline!\}!}\\
+\begin{lstlisting}[caption=Solution for Exercise 2.21]
+public Pet(String petsName)
+{
+	name = petsName;
+}
+\end{lstlisting}
 
 \subsubsection*{Exercise 2.22}
 \textit{Challange exercise The following object creation will result in the 
 constructor of the \lstinline{Date} class being called. Can you write the 
 constructor's header? \\
 \lstinline{new Date("March", 23, 1861)}\\
-Try give meaningful names to the parameters. }
-
+Try give meaningful names to the parameters. }\\
+\begin{lstlisting}[caption=Solution for Exercise 2.22]
+public Date(String month, byte day, short year)
+\end{lstlisting}
