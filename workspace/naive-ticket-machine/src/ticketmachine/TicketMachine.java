@@ -9,7 +9,6 @@
  * @author David J. Barnes and Michael Kölling
  * @version 2011.07.31
  */
-
 package ticketmachine;
 
 public class TicketMachine
