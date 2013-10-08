@@ -2,34 +2,46 @@
 
 \subsubsection*{Exercise 1}
 \textit{What is a header? What is a body?}\\
+The header includes informations about the return type, method name and the 
+parameters of the method whereas the body includes the algorithm what the 
+method does. 
 
 \subsubsection*{Exercise 2}
 \textit{Write down the signatures of the methods form class 
 	TicketMachine}\\
+\begin{lstlisting}[caption=Signature of the methods from class TicketMachine]
+getPrice()
+getBalance()
+insertMoney(int amount)
+printTicket()
+\end{lstlisting}
 
 \subsubsection*{Exercise 3}
 \textit{Where can you place expressions and definitions?}\\
+inside methods
 
 \subsubsection*{Exercise 4}
 \textit{What is a block?}\\
+Everythin between matching curly brackets
 
 \subsubsection*{Exercise 5}
 \textit{How many \lstinline{return} expressions do you find in Code 2.1?}\\
+2
 
 \subsubsection*{Exercise 7}
 \textit{What's the meaning of the return-type \lstinline{void}?}\\
+There is no return statement in this method. So there is no return type. 
 
 \subsubsection*{Exercise 8}
 \textit{Fill out the table.}\\
-
 \begin{table}
 	\centering
 	\begin{tabular}{ll}
 		\textbf{compound assignment} & \textbf{assignment} \\
 		\lstinline!a += b! & \lstinline!a = a + b! \\
-		\lstinline!a -= b! & \\
-		\lstinline!a *= b! & \\
-		\lstinline!a /= b! & \\
+		\lstinline!a -= b! & \lstinline!a = a - b! \\
+		\lstinline!a *= b! & \lstinline!a = a * b! \\
+		\lstinline!a /= b! & \lstinline!a = a / b! \\
 	\end{tabular}
 \end{table}
 
@@ -37,42 +49,61 @@
 \textit{In the code of the TicketMachine, there are two places where you
 	can place a compound assignment operator. Find those two 
 	places.}\\
+In \lstinline{insertMoney(int amount)} and \lstinline{printTicket()}
+\begin{lstlisting}[caption=places eith the placed compound assignment operator]
+...
+balance += amount;
+...
+total += balance;
+...
+\end{lstlisting}
 
 \subsubsection*{Exercise 12}
 \textit{Describe the conditional operator of the pseudo-code on page 42
 	in german. Try to translate the code in german (except for the keywords
 	\lstinline{if} and \lstinline{else}.}\\
+\begin{lstlisting}[caption=translated conditional operator]
+if(Test mit Ergebnis wahr oder falsch) {
+	Tu dies, wenn die Bedingung wahr ist. 
+}
+else {
+	Tu das, wenn die Bedingung falsch ist. 
+}
+\end{lstlisting}
 
 \subsubsection*{Exercise 16}
 \textit{At pitfall on page 48 is a very important information.
 	Translate the first sentence in german.}\\
+Eine lokale Variable mit dem selben Namen wie eine Instanzvariable verhindert, 
+dass auf die Instanzvariable von einem Konstruktor oder einer Methode aus 
+zugegriffen werden kann. 
 
 \subsubsection*{Exercise 17}
 \textit{Fill out the following table.}\\
 
 \begin{table}
 	\centering
-	\begin{tabular}{l | l | l | l}
+	\begin{tabular}{p{0.3\textwidth} | p{0.2\textwidth} | p{0.2\textwidth} | p{0.2\textwidth}}
 			& \textbf{Field} 
 				& \textbf{formal parameter} 
 					& \textbf{local variable} \\
 		\hline
-		can store values? 
-			&
-				&
-					& \\
-		Where is/are they defined?
-			&
-				&
-					& \\
-		How long do they exist?
-			&
-				&
-					& \\
-		From where can you access them?
-			&
-				&
-					& 
+		\rowcolor{lgray}Can store values? 
+			& yes
+				& no
+					& yes \\
+		\rowcolor{white}Where is/are they defined?
+			& Inside the class
+				& in the method signature/header
+					& inside a method \\
+		\rowcolor{lgray}How long do they exist?
+			& as long as the object
+				& during the method execution
+					& inside the block in is defined in \\
+		\rowcolor{white}From where can you access them?
+			& Methods inside the class
+				& inside the method
+					& inside the block in is defined in
 	\end{tabular}
 \end{table}
 
@@ -81,38 +112,56 @@
 \textit{Compare the header and body of the \lstinline?getBalance? method with 
 the header and body of the \lstinline?getPrice? method. What are the 
 differences between them? }\\
+The two methods belong to different fields. 
 
 \subsubsection*{Exercise 2.24}
 \textit{If a call to \lstinline?getPrice? can be characterized as 
 "'What do ticketscost?"' how would you characterize a call to 
 \lstinline?getBalance?? }\\
+How much money is inserted in the ticketmachine? 
 
 \subsubsection*{Exercise 2.25}
 \textit{If the name of \lstinline?getBalance? is changed to 
 \lstinline?getAmount?, does the return statement in the body of the method 
 also need to be changed for the code to compile? Try it out with BlueJ. What 
-does this tell you about the name of an accessor method and the nema of the 
+does this tell you about the name of an accessor method and the name of the 
 field associated with it? }\\
+The accessor method does not need to have the same name as the assiciated 
+field. 
 
 \subsubsection*{Exercise 2.26}
 \textit{Write an accessor method \lstinline?getTotal? in the 
 \lstinline?TickatMachine? class. The new method should return the value of the 
 \lstinline?total? field. }\\
+\begin{lstlisting}[caption=Solution for Exercise 2.26 method getTotal]
+/* 
+ * Return the total value of inserted money
+ */
+public int getTotal()
+{
+	return total;
+}
+\end{lstlisting}
 
 \subsubsection*{Exercise 2.27}
 \textit{Try removing the return statement from the body of 
 \lstinline?getPrice?. What error message do you see now when you try compiling 
 the class? }\\
+\lstinline{Exception in thread "main" java.lang.Error: Unresolved compilation problem:}
+\lstinline{This method must return a result of type int}
 
 \subsubsection*{Exercise 2.28}
 \textit{Compare the method headers of \lstinline?getPrice? and 
 \lstinline?printTicket? in Code 2.1. Apart from their names, what is the main 
 difference between them? }\\
+getPrice has a return type of int, whereas printTicket has void as return type. 
 
 \subsubsection*{Exercise 2.29}
 \textit{Do the \lstinline?insertMoney? and \lstinline?printTicket? methods have 
 return statements? Why do you think this might be? Do you notice anything about 
 their headers that might suggest why they do not require return statements? }\\
+Both methods have no return statements. Because they have no return statements
+the return type is void. 
 
 \subsubsection*{Exercise 2.30}
 \textit{Create a ticket machine with a ticket price of your choosing. Before 
@@ -127,10 +176,17 @@ its \lstinline?balance? field. }\\
 \textit{How can we tell from just its header that \lstinline?setPrice? is a 
 method and not a constructor? \\
 \lstinline?public void setPrice(int cost)?}\\
+setPrice has a return type whereas a constructor has no return type. 
 
 \subsubsection*{Exercise 2.32}
 \textit{Complete the body of the \lstinline?setPrice? method so that it 
 assigns the value of its parameter to the \lstinline?price? field. }\\
+\begin{lstlisting}
+public void setPrice(int newprice)
+{
+	price = newprice;
+}
+\end{lstlisting}
 
 \subsubsection*{Exercise 2.33}
 \textit{Complete the body of the following method, whose purpose is to add the 
@@ -142,10 +198,25 @@ value of its parameter to a field named \lstinline?score?. \\
 \lstinline{\{}\\
 \lstinline{    ...}\\
 \lstinline{\}}}\\
+\begin{lstlisting}
+/**
+ * Increase score by the given number of points.
+ */
+public void increase(int points)
+{
+	score += points;
+}
+\end{lstlisting}
 
 \subsubsection*{Exercise 2.34}
 \textit{Is the increase method a mutator? If so, how could you demonstrate 
 this? }\\
+increace() is a mutator. 
+\begin{lstlisting}[caption=Code to show that increase() changes score]
+System.out.println(getScore);
+increase(1);
+System.out.println(getScore);
+\end{lstlisting}
 
 \subsubsection*{Exercise 2.35}
 \textit{Complete the following method, whose purpose is to subtract the value 
@@ -157,41 +228,74 @@ public void discount(int amount)
 {
     ...
 }?}\\
+\begin{lstlisting}
+/**
+ * Reduce price by the given amount. 
+ */
+public void discount(int amount)
+{
+	price -= amount;
+}
+\end{lstlisting}
 
 \subsubsection*{Exercise 2.36}
 \textit{Write down exactly what will be printed by the following statement: \\
 \lstinline?System.out.println("My cat has green eyes.");?}\\
+My cat has green eyes. 
 
 \subsubsection*{Exercise 2.37}
 \textit{Add a method called \lstinline?prompt? to the \lstinline?TicketMachine? 
 class. This should have a void return type and take no parameters. The body of 
 the method should print the following single line of output: \\
 \lstinline?Please insert the correct amount of money. ?}\\
+\begin{lstlisting}
+/* 
+ * Prints a request to insert the correct amount of money. 
+ */
+public void prompt()
+{
+	System.out.println("Please insert the correct amount of money. ");
+}
+\end{lstlisting}
 
 \subsubsection*{Exercise 2.38}
 \textit{What do you think would be printed if you altered the fourth statement 
 of \lstinline?printTicket? so that \lstinline?price? also has quotes around it, 
 as follows? \\
 \lstinline?System.out.println("\# " + "price" + " cents.");?}\\
+\# price cents
 
 \subsubsection*{Exercise 2.39}
 \textit{What about the following version? \\
-\lstinline?SSystem.out.println("\# price cents.");?}\\
+\lstinline?System.out.println("\# price cents.");?}\\
+\# price cents
 
 \subsubsection*{Exercise 2.40}
 \textit{Could either of the previous two versions be used to show the price of 
 tickets in different ticket machines? Explain your answer. }\\
+No. Both of them use a string with the value "'price"' instead of the value of 
+the field price. 
 
 \subsubsection*{Exercise 2.41}
 \textit{Add a \lstinline?showPrice? method to the \lstinline?TicketMachine? 
 class. This should have a void return type and take no parameters. The body of 
 the method should print: \\
-\lstinline?The price of a ticket is xyz cents- ?}\\
+\lstinline?The price of a ticket is xyz cents. ?}\\
+\begin{lstlisting}
+/* 
+ * Prints the price of the ticket. 
+ */
+public void showPrice()
+{
+	System.out.println("The price of the ticket is " + price + "cents. ");
+}
+\end{lstlisting}
 
 \subsubsection*{Exercise 2.42}
 \textit{Create two ticket machines with differently priced tickets. Do calls 
 to their \lstinline?showPrice? methods show the same output, or different? How 
 do you explain this effect? }\\
+The output is different because each ticket machine has its own price field. 
 
 \subsubsection*{Exercise 2.43}
 \textit{Modify the constructor of \lstinline?TicketMachine? so that it no 
