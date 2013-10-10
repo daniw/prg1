@@ -302,12 +302,36 @@ The output is different because each ticket machine has its own price field.
 longer has a parameter. Instead, the price of tickets should be fixed at 1,000 
 cents. What effect does this have when you construct ticket.machine objects 
 within BlueJ? }\\
+All ticket machine objects have the same value within the price field. 
 
 \subsubsection*{Exercise 2.44}
 \textit{Give the class two constructors. One should take a single parameter 
 that specifies the price, and the other should take no parameter and set the 
 price to be a default value of your choosing. Test your implementation by 
 creating machines via two different constructors. }\\
+\begin{lstlisting}
+/**
+  * Create a machine that issues tickets of the given price.
+  * Note that the price must be greater than zero, and there
+  * are no checks to ensure this.
+  */
+public TicketMachine(int cost)
+{
+    price = cost;
+    balance = 0;
+    total = 0;
+}
+
+/**
+  * Create a machine that issues tickets with a price of 1000. 
+  */
+public TicketMachine()
+{
+    price = 1000;
+    balance = 0;
+    total = 0;
+}
+\end{lstlisting}
 
 \subsubsection*{Exercise 2.45}
 \textit{Implement a method, \lstinline?empty?, that simulates the effect of 
@@ -317,6 +341,15 @@ this method need to take any parameters? Test your method by reating a
 machine, inserting some moneym printing some tickets, checking the total, and 
 then emptying the machine. Is the \lstinline?empty? method a mutator or an 
 accessor? }\\
+\begin{lstlisting}
+/**
+  * Removes all money from the ticket machine. 
+  */
+public void empty()
+{
+    total = 0;
+}
+\end{lstlisting}
 
 \subsubsection*{Exercise 2.46}
 \textit{Check that the behavior discussed here is accurate by creating a 
@@ -332,18 +365,29 @@ the value zero as the parameter, and then see if you are right. }\\
 \lstinline?if(amount >= 0)?\\
 Check your predictions by running some tests. What difference does it make to 
 the behavior of the method? }\\
+When amount is 0 there is no error message printed. 
 
 \subsubsection*{Exercise 2.48}
 \textit{Rewrite the if-else statement so that the error message is printed if 
 the boolean expression is true but the balance is increased if the expression 
 is false. You will obviously have to rewrite the condition to make things 
 happen this way arround. }\\
+\begin{lstlisting}
+if(amount < 0) {
+	System.out.println("Use a positive amount rather than " + amount);
+}
+else {
+	balance += amount;
+}
+\end{lstlisting}
 
 \subsubsection*{Exercise 2.49}
 \textit{In the figures project we looked at in Chapter 1 we used a 
 \lstinline?boolean? field to control a feature of the circle objects. What was 
 that feature? Was it well suited to being controlled by a type with only two 
 different values? }\\
+The field visible was true when the circle was visible and false when the 
+circle was false. 
 
 \subsubsection*{Exercise 2.50}
 \textit{In this version of \lstinline{printTicket}, we also do something 
