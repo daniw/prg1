@@ -1,58 +1,62 @@
+\section{SW4}
 \subsection{Selfstudy-Questions OOP4}
 
 \subsubsection{Chapter 3.6 - Class diagrams vs. object diagrams}
 
 \subsubsection*{Exercise 1}
 \textit{How do you declare a referencevariable?}\\
-
+\verb?type name = initial_value;?
 
 \subsubsection*{Exercise 2}
-\textit{Draw the object diagram to the BlueJ project "house" from 
+\textit{Draw the object diagram to the BlueJ project "'house"' from 
 chapter 1.}\\
-
+Drawed on paper. 
 
 \subsubsection*{Exercise 3}
-\textit{Draw the class diagram to the BlueJ project "house" from
+\textit{Draw the class diagram to the BlueJ project "'house"' from
 chapter 1.}\\
-
+Drawed on paper. 
 
 \subsubsection*{Exercise 4}
 \textit{Solve the exercises 3.1 to 3.4}\\
+see \ref{book_oop4}. 
 
 \subsubsection{Chapter 3.8 - The ClockDisplay source code}
 
 \subsubsection*{Exercise 1}
 \textit{Solve the exercise 3.5}\\
-
+see \ref{book_oop4}. 
 
 \subsubsection*{Exercise 2}
 \textit{What is the result of the following expressions?}\\
 
 \begin{table}[h!]
 	\begin{tabular}{l c l l}
-	\lstinline!(3>2)! & \lstinline!^! & \lstinline!(4>5)! & \\
-	\lstinline!(3<2)! & \lstinline!^! & \lstinline!(4>5)! & \\
-	\lstinline!(3<2)! & \lstinline!&&! & \lstinline!(4>5)! &  \\
-	\lstinline!(3>2)! & \lstinline!||! & \lstinline!(4>5)! & \\
-	\lstinline?!(3>2)? &  &  &
+	\lstinline!(3>2)! & \lstinline!^! & \lstinline!(4>5)! & true \\
+	\lstinline!(3<2)! & \lstinline!^! & \lstinline!(4>5)! & false \\
+	\lstinline!(3<2)! & \lstinline!&&! & \lstinline!(4>5)! & false \\
+	\lstinline!(3>2)! & \lstinline!||! & \lstinline!(4>5)! & true \\
+	\lstinline?!(3>2)? &  &  & false
 	\end{tabular}
 \end{table}
 
 \subsubsection*{Exercise 3}
 \textit{Solve the exercises 3.6 to 3.8}\\
-
+see \ref{book_oop4}. 
 
 \subsubsection*{Exercise 4}
 \textit{Solve the exercises 3.15 to 3.17 and 3.19}\\
-
+see \ref{book_oop4}. 
 
 \subsubsection*{Exercise 5}
 \textit{Solve the exercise 3.21}\\
+see \ref{book_oop4}. 
 
 \subsubsection{Chapter 3.9 - Objects creating objects}
 
 \subsubsection*{Exercise 1}
 \textit{Solve the exercise 3.23}\\
+see \ref{book_oop4}. 
 
 \subsubsection{Chapter 3.10 - Multiple constructors}
 
@@ -60,22 +64,34 @@ chapter 1.}\\
 \textit{Create the singatures for all possible constructors which accord
 with the following object-creation.}\\
 \lstinline{new Student("Peter", 34);}
-
+\begin{lstlisting}
+Student(String name, int age)
+Student(String name, long age)
+Student(String name, float age)
+Student(String name, double age)
+\end{lstlisting}
 
 \subsubsection*{Exercise 2}
 \textit{Solve the exercises 3.28 and 3.29}\\
+see \ref{book_oop4}. 
 
 \subsubsection{Chapter 3.11 - Method calls}
 
 \subsubsection*{Exercise 1}
 \textit{Solve the exercise 3.30}\\
+see \ref{book_oop4}. 
 
 \subsubsection{Chapter 3.12 - Another example of object interaction}
 
 \subsubsection*{Exercise 1}
 \textit{Solve the exercises 3.33 and 3.34}\\
+see \ref{book_oop4}. 
 
 \subsubsection{Chapter 3.13 - Using a debugger}
 
 \subsubsection*{Exercise 1}
 \textit{Solve the exercises 3.35 to 3.42}\\
+see \ref{book_oop4}. 
+
+\subsection{Exercises from book (chapter 3)}
+\label{book_oop4}
