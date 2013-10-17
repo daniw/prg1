@@ -1,0 +1,22 @@
+16777215 -> 01001011011111111111111111111111
+16777215.25 -> 01001011011111111111111111111111 (Das selbe wie 16777215)
+16777216 -> 01001011100000000000000000000000
+16777216.25 -> 01001011100000000000000000000000 (Das selbe wie 16777216)
+16777217 -> 01001011100000000000000000000000 (Das selbe wie 16777216)
+(Quelle: http://www.h-schmidt.net/FloatConverter/IEEE754de.html)
+
+16777215.25 und 16777216.25 werden abgerundet. 16777217 wird sogar zu 16777216 abgerundet. 
+Das hat mit der Darstellung von Gleitkommazahlen zu tun. 
+
+Ganzzahlen werden im Binärsystem gespeichert. In diesem können die Ziffern die Werte 0 und 1 annehmen. Die "Zehnerstelle" hat die Wertigkeit 2, die Hunderterstelle die Wertigkeit 4, u.s.w. Das höchstwertigste Bit stellt das Vorzeichen dar. (0 -> +, 1 -> -) Negative Zahlen werden dabei im Zweierkomplement gespeichert, auf welches ich nicht näher eingehe. 
+
+$00001001_b = 0 \cdot 64 + 0 \cdot 32 + 0 \cdot 16 + 0 \cdot 8 + 0 \cdot 4 + 0 \cdot 2 + 0 \cdot 1 = 9_d$
+
+Nach IEEE 754 wird eine Gleitkommazahl mit einer Mantisse und einem Exponent gespeichert. Selbstverständlich hat eine Gleitkommazahl auch ein Vorzeichen. 
+
+Die Mantisse ist dabei gleich aufgebaut wie eine Ganzzahl. Der Bereich der Gannzahl wird in den Bereich $1 \leq Mantisse < 2$ skaliert. Die Mantisse wird anschliessend mit $2^{Exponent-Bias}$ multipliziert. Dies entspricht einer "Verschiebung" um $Exponent-Bias$ nach links. Das ist ähnlich wie das Schieben bei einer Multiplikation bzw. Division um 10 im Zahnersystem. $Bias$ ist dabei ein fixer Wert zum "Vorspannen" des Exponenten. Bias ist abhängig vom jeweiligen Datentyp. 
+
+16777215 ist dabei die grösste Ganzzahl, die noch verlustfrei als float gespeichert werden kann. Die Mantisse ist dabei mit 1 gefüllt und repräsentiert beinahe 2. Soll nun 16777215.25 gespeichert werden, so werden die Nachkommastellen weggeworfen. 
+16777216 setzt nun die Mantisse auf 0. Diese repräsentiert nun den Wert 1. Zusätzlich wird der Exponent um 1 erhöht. Dieser Schritt ist mit dem Schritt von 999 zu 1000 im Dezimalen System zu vergleichen ($9.99 \cdot 10^2 + 1 = 1.00 \cdot 10^3$). Wenn wir nur 3 Stellen speicher könnten, würden wir im Dazimalen System ja auch die letzte Ziffer verlieren ($1001 \rightarrow 1.00 \cdot 10^3$). Das Selbe passiert auch bei 16777217. 
+
+Dieses Problem kann nicht gelöst werden. Es kann lediglich in einen höheren Zahlenbereich verschoben werden indem als Datentyp double verwendet wird. 
