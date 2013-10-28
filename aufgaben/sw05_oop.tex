@@ -8,10 +8,14 @@
 
 \subsubsection*{Exercise 2}
 \textit{What do you understand by "Java-Package"?}\\
+A library built in in java. 
 
 \subsubsection*{Exercise 3}
 \textit{You want to use the library-class ArrayList. What expression makes it
 possible to use that library-class in your source code?}\\
+\begin{lstlisting}
+import java.util.ArrayList;
+\end{lstlisting}
 
 \subsubsection{Chapter 4.4 to 4.7 - Numbering within collections}
 
@@ -27,13 +31,17 @@ possible to use that library-class in your source code?}\\
 \subsubsection*{Exercise 7}
 \textit{Explanin the following declaration:}\\
 \lstinline?private ArrayList<Balloon> list = new ArrayList<>();?\\
+A field called list is defined as a collection of Balloons
 
 \subsubsection*{Exercise 8}
-\textit{What is the connection between abstraction an ArrayLists?}\\
+\textit{What is the connection between abstraction and ArrayLists?}\\
+We do not have to know how ArrayLists work internally. It is enough to know 
+how to work with it. 
 
 \subsubsection*{Exercise 9}
 \textit{What is the difference of the methods remove() and get() on
 ArrayLists?}\\
+remove() deletes a item in a collection whereas get returns its content. 
 
 \subsubsection{Chapter 4.8 to 4.12 - The Iterator type}
 
@@ -48,9 +56,14 @@ ArrayLists?}\\
 
 \subsubsection*{Exercise 13}
 \textit{Is it possible, that the body of an while-loop is never executed?}\\
+Yes, if the condition is false in the first loop. 
 
 \subsubsection*{Exercise 14}
 \textit{Show two alternative expressions for no++}\\
+\begin{lstlisting}
+no += 1;
+no = no + 1;
+\end{lstlisting}
 
 \subsubsection*{Exercise 15}
 \textit{An ArrayList can be traversed by an foreach-loop. Do you know other
@@ -92,54 +105,113 @@ with a drwing/sektch. What does it look like, if it's storing an object?}\\
 \subsubsection{Exercise 4.1}
 
 \subsubsection{Exercise 4.2}
+I expect no error because files.remove(index); is not executed in this case 
+because files.size is 0. So the if statement os false. 
 
 \subsubsection{Exercise 4.3}
+The second file is returned because the files are shifted when one is deleted. 
 
 \subsubsection{Exercise 4.4}
+\begin{lstlisting}
+private ArrayList<Book> library;
+\end{lstlisting}
 
 \subsubsection{Exercise 4.5}
+\begin{lstlisting}
+ArrayList<Student> cs101
+\end{lstlisting}
 
 \subsubsection{Exercise 4.6}
+\begin{lstlisting}
+private ArrayList<MusicTrack> tracks
+\end{lstlisting}
 
 \subsubsection{Exercise 4.7}
+\begin{lstlisting}[caption=without diamond notation]
+library = new ArrayList<Book>();
+cs101 = new ArrayList<Student>();
+track = new ArrayList<MusicTrack>();
+\end{lstlisting}
+\begin{lstlisting}[caption=with diamond notation]
+library = new ArrayList<>();
+cs101 = new ArrayList<>();
+track = new ArrayList<>();
+\end{lstlisting}
 
 \subsubsection{Exercise 4.8}
+10
 
 \subsubsection{Exercise 4.9}
+\begin{lstlisting}
+System.out.println(items.get());
+\end{lstlisting}
 
 \subsubsection{Exercise 4.10}
+14
 
 \subsubsection{Exercise 4.11}
+\begin{lstlisting}
+files.add(favouriteTrack)
+\end{lstlisting}
 
 \subsubsection{Exercise 4.12}
+\begin{lstlisting}
+dates.remove(2)
+\end{lstlisting}
 
 \subsubsection{Exercise 4.13}
+5
 
 \subsubsection{Exercise 4.18}
+\begin{lstlisting}
+public String listAllFiles() {
+    
+}
+\end{lstlisting}
 
 \subsubsection{Exercise 4.19}
+\begin{lstlisting}
+public String listAllFiles() {
+    String returnString = "";
+    for(String filename : files) {
+        returnString += filename + "\n";
+    }
+    return(returnString)
+}
+\end{lstlisting}
 
 \subsubsection{Exercise 4.22}
 
+
 \subsubsection{Exercise 4.62}
+
 
 \subsubsection{Exercise 4.63}
 
+
 \subsubsection{Exercise 4.64}
+
 
 \subsubsection{Exercise 4.65}
 
+
 \subsubsection{Exercise 4.66}
+
 
 \subsubsection{Exercise 4.67}
 
+
 \subsubsection{Exercise 4.68}
+
 
 \subsubsection{Exercise 4.69}
 
+
 \subsubsection{Exercise 4.71}
 
+
 \subsubsection{Exercise 4.73}
+
 
 \subsubsection{Exercise 4.74}
 
