@@ -101,7 +101,7 @@ The length of an array cannot be changed.
 \subsubsection*{Exercise 22}
 \textit{How do you get the length of an Array?}\\
 \begin{lstlisting}
-array.length
+arrayname.length
 \end{lstlisting}
 
 \subsubsection*{Exercise 23}
@@ -191,34 +191,66 @@ public String listAllFiles() {
 
 
 \subsubsection{Exercise 4.62}
-
+\begin{lstlisting}
+People[] people;
+\end{lstlisting}
 
 \subsubsection{Exercise 4.63}
-
+\begin{lstlisting}
+boolean[] vacant;
+\end{lstlisting}
 
 \subsubsection{Exercise 4.64}
 
 
 \subsubsection{Exercise 4.65}
-
+\begin{lstlisting}
+int[] counts; 
+boolean{} occupied = new boolean[5000]
+\end{lstlisting}
 
 \subsubsection{Exercise 4.66}
-
+\begin{lstlisting}
+readings = new double[60];
+urls = new String[90];
+machines = new Ticketmachine[5];
+\end{lstlisting}
 
 \subsubsection{Exercise 4.67}
-
+20
 
 \subsubsection{Exercise 4.68}
-
+\begin{lstlisting}
+double[] prices = new double[50];
+\end{lstlisting}
 
 \subsubsection{Exercise 4.69}
-
+At the last loop hour refers to an element in the array that does not exist. 
+Java will raise an error message. 
 
 \subsubsection{Exercise 4.71}
-
+\begin{lstlisting}
+public void printGreater(double marks, double mean)
+{
+    for(index = 0; index < marks.length; index++) {
+        if(marks[index] > mean) {
+            System.out.println(marks[index]);
+        }
+    }
+}
+\end{lstlisting}
 
 \subsubsection{Exercise 4.73}
-
+\begin{lstlisting}
+public int numberOfAccesses()
+{
+    int total = 0;
+    for(int i = 0; i < hourCounts.length; i++) {
+        total += hourCounts[i]
+    }
+    return total;
+}
+\end{lstlisting}
 
 \subsubsection{Exercise 4.74}
 
