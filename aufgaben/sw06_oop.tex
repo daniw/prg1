@@ -10,6 +10,25 @@
 \textit{At page 157 and 158 there is a Method start() that uses a 
 while-loop. Create a code snippet with the same functionality by using a
 do-while loop.}
+\begin{lstlisting}
+public void start() {
+    boolean finished = false;
+    
+    printWelcome();
+    do {
+        String input = reader.getInput();
+        
+        if(input.startsWith("bye")) {
+            finished = true;
+        }
+        else {
+            String response = responder.generateResponse();
+            System.out(response);
+        }
+    } while(!finished);
+    printGoodbye();
+}
+\end{lstlisting}
 
 \subsubsection{Chapter 5.3 - Reading class documentation}
 
@@ -19,6 +38,7 @@ do-while loop.}
 \subsubsection*{Exercise 4}
 \textit{In which package do you suppose the class FileWriter?
 Check your guess with the Java API documentation.}
+
 
 \subsubsection*{Exercise 5}
 \textit{With the class BufferReader you can read files line by line.
